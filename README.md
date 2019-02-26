@@ -30,11 +30,11 @@ const defaults = {
 function functionWithOptions(options) {
     options = assert(options, defaults);
     
-    // now can safely access options.first, etc.
+    // safely use options here
 }
 ```
 
-Alternative syntax, when you do not need defaults:
+Alternative syntax, when defaults are not needed:
 
 ```js
 function functionWithOptions(options) {

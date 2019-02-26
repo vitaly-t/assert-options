@@ -8,6 +8,8 @@ function createOuterError(err, msg) {
 */
 
 module.exports = (options, def) => {
+    throw new Error('Not implemented yet!');
+
     def = def || {};
     if (options) {
         for (const a in options) {
