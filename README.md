@@ -59,7 +59,8 @@ with defaults set as specified.
 
 * When `options` contains an unknown property, [TypeError] is thrown: `Option "name" is not supported.`
 
-* When a property in `options` is missing or `undefined`, its value is set from the `defaults`.
+* When a property in `options` is missing or `undefined`, its value is set from the `defaults`,
+but only when the latter is not `undefined`.
 
 * When `options` is not `null`/`undefined`, it is expected to be of type `object`, or else [TypeError]
 is thrown: `Invalid "options" parameter.`
