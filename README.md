@@ -44,3 +44,5 @@ function functionWithOptions(options) {
     options = assert(options, ['first', 'second', 'third']);
 }
 ```
+
+And in web browsers, global function `assertOptions` is available.
