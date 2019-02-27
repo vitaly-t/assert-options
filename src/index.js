@@ -1,13 +1,17 @@
 (function (window) {
     'use strict';
 
-    function assertOptions(options, def) {
-        def = (def && typeof def === 'object') ? def : {};
-        const isArray = Array.isArray(def);
+    function assertOptions(options, defaults) {
+        if (options !== null && options !== undefined && typeof options !== 'object') {
+            throw new TypeError('Invalid "options" parameter.');
+        }
+        const isArray = Array.isArray(defaults);
+        if (!isArray && (!defaults || typeof defaults !== 'object')) {
+            throw new TypeError('Invalid "defaults" parameter.');
+        }
         if (options) {
-            options = typeof options === 'object' ? options : {};
             for (const a in options) {
-                if ((isArray && def.indexOf(a) === -1) || (!isArray && !(a in def))) {
+                if ((isArray && defaults.indexOf(a) === -1) || (!isArray && !(a in defaults))) {
                     throw new TypeError('Option "' + a + '" is not supported.');
                 }
             }
@@ -15,9 +19,9 @@
             options = {};
         }
         if (!isArray) {
-            for (const b in def) {
-                if (!(b in options)) {
-                    options[b] = def[b];
+            for (const d in defaults) {
+                if (!(d in options)) {
+                    options[d] = defaults[d];
                 }
             }
         }

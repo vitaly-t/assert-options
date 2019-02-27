@@ -37,7 +37,7 @@ function functionWithOptions(options) {
 }
 ```
 
-Alternative syntax, when defaults are not needed:
+Alternative syntax, when default values are not needed:
 
 ```js
 function functionWithOptions(options) {
@@ -48,3 +48,17 @@ function functionWithOptions(options) {
 ```
 
 And in web browsers, global function `assertOptions` is available.
+
+## API
+
+When `options` is `null`/`undefined`, it is assumed to be not used,
+returning a new `{}` on output, with defaults set as specified.
+
+When `options` is not `null`/`undefined`, it is expected to be of type `object`,
+or else [TypeError] is thrown - `Invalid "options" parameter.`.
+
+Parameter `defaults` must always be passed in, either as an object or an array of strings,
+or else [TypeError] is thrown - `Invalid "defaults" parameter.`.
+
+[TypeError]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
+

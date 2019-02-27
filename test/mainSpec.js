@@ -4,16 +4,10 @@ const assert = require('../src');
 
 describe('positive', () => {
 
-    it('must ignore empty or invalid options', () => {
-        expect(assert()).toEqual({});
-        expect(assert(0)).toEqual({});
-        expect(assert('')).toEqual({});
-        expect(assert(123)).toEqual({});
-    });
-
     it('must return the same object when empty', () => {
         const obj = {};
-        expect(assert(obj)).toBe(obj);
+        expect(assert(obj, [])).toBe(obj);
+        expect(assert(obj, {})).toBe(obj);
     });
 
     it('must provide default values', () => {
@@ -23,6 +17,7 @@ describe('positive', () => {
     });
 
     it('must not set defaults for arrays', () => {
+        expect(assert(null, [])).toEqual({});
         expect(assert(null, ['one'])).toEqual({});
     });
 
@@ -30,9 +25,55 @@ describe('positive', () => {
 
 describe('negative', () => {
 
+    const invalidOptions = 'Invalid "options" parameter.';
+    const invalidDefaults = 'Invalid "defaults" parameter.';
+
+    it('must throw on invalid options', () => {
+        expect(() => {
+            assert(0);
+        }).toThrow(invalidOptions);
+        expect(() => {
+            assert(123);
+        }).toThrow(invalidOptions);
+        expect(() => {
+            assert('');
+        }).toThrow(invalidOptions);
+        expect(() => {
+            assert('1');
+        }).toThrow(invalidOptions);
+    });
+
+    it('must throw on invalid defaults', () => {
+        expect(() => {
+            assert();
+        }).toThrow(invalidDefaults);
+        expect(() => {
+            assert(null);
+        }).toThrow(invalidDefaults);
+        expect(() => {
+            assert({});
+        }).toThrow(invalidDefaults);
+        expect(() => {
+            assert({}, 0);
+        }).toThrow(invalidDefaults);
+        expect(() => {
+            assert({}, 123);
+        }).toThrow(invalidDefaults);
+        expect(() => {
+            assert({}, '');
+        }).toThrow(invalidDefaults);
+        expect(() => {
+            assert({}, '1');
+        }).toThrow(invalidDefaults);
+    });
+
     it('must throw on unknown properties', () => {
         expect(() => {
-            assert({one: 1});
+            assert({one: 1}, []);
+        }).toThrow('Option "one" is not supported.');
+
+        expect(() => {
+            assert({one: 1}, {});
         }).toThrow('Option "one" is not supported.');
 
         expect(() => {
