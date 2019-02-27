@@ -5,6 +5,9 @@ Safe and simple one-line `options` handling:
 * throw detailed error on any unknown option
 * set default values for all missing options  
 
+[![Build Status](https://travis-ci.org/vitaly-t/assert-options.svg?branch=master)](https://travis-ci.org/vitaly-t/assert-options)
+[![Coverage Status](https://coveralls.io/repos/vitaly-t/assert-options/badge.svg?branch=master)](https://coveralls.io/r/vitaly-t/assert-options?branch=master)
+
 ## Rationale
 
 * Passing in invalid or misspelled option names is one of the most common errors.
