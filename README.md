@@ -46,6 +46,9 @@ And when default values are not needed, you can use an array of strings:
 function functionWithOptions(options) {
     options = assert(options, ['first', 'second', 'third']);
     
+    // the result is exactly the same, as using this:
+    // options = assert(options, {first: undefined, second: undefined, third: undefined});
+    
     // options is a safe object here, without defaults.
 }
 ```
