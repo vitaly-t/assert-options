@@ -3,11 +3,11 @@
 
     function assertOptions(options, defaults) {
         if (options !== null && options !== undefined && typeof options !== 'object') {
-            throw new TypeError('Invalid "options" parameter.');
+            throw new TypeError('Invalid "options" parameter: ' + JSON.stringify(options));
         }
         const isArray = Array.isArray(defaults);
         if (!isArray && (!defaults || typeof defaults !== 'object')) {
-            throw new TypeError('Invalid "defaults" parameter.');
+            throw new TypeError('Invalid "defaults" parameter: ' + JSON.stringify(defaults));
         }
         if (options) {
             for (const a in options) {

@@ -63,9 +63,9 @@ with defaults set as specified.
 but only when the latter is not `undefined`.
 
 * When `options` is not `null`/`undefined`, it is expected to be of type `object`, or else [TypeError]
-is thrown: `Invalid "options" parameter.`
+is thrown: `Invalid "options" parameter: value`.
 
 * Parameter `defaults` must always be passed in, either as a non-null object or an array of strings,
-or else [TypeError] is thrown: `Invalid "defaults" parameter.`
+or else [TypeError] is thrown: `Invalid "defaults" parameter: value`.
 
 [TypeError]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError

@@ -33,46 +33,43 @@ describe('positive', () => {
 
 describe('negative', () => {
 
-    const invalidOptions = 'Invalid "options" parameter.';
-    const invalidDefaults = 'Invalid "defaults" parameter.';
-
     it('must throw on invalid options', () => {
         expect(() => {
             assert(0);
-        }).toThrow(invalidOptions);
+        }).toThrow('Invalid "options" parameter: 0');
         expect(() => {
             assert(123);
-        }).toThrow(invalidOptions);
+        }).toThrow('Invalid "options" parameter: 123');
         expect(() => {
             assert('');
-        }).toThrow(invalidOptions);
+        }).toThrow('Invalid "options" parameter: ""');
         expect(() => {
             assert('1');
-        }).toThrow(invalidOptions);
+        }).toThrow('Invalid "options" parameter: "1"');
     });
 
     it('must throw on invalid defaults', () => {
         expect(() => {
             assert();
-        }).toThrow(invalidDefaults);
+        }).toThrow('Invalid "defaults" parameter: undefined');
         expect(() => {
             assert(null);
-        }).toThrow(invalidDefaults);
+        }).toThrow('Invalid "defaults" parameter: undefined');
         expect(() => {
             assert({});
-        }).toThrow(invalidDefaults);
+        }).toThrow('Invalid "defaults" parameter: undefined');
         expect(() => {
             assert({}, 0);
-        }).toThrow(invalidDefaults);
+        }).toThrow('Invalid "defaults" parameter: 0');
         expect(() => {
             assert({}, 123);
-        }).toThrow(invalidDefaults);
+        }).toThrow('Invalid "defaults" parameter: 123');
         expect(() => {
             assert({}, '');
-        }).toThrow(invalidDefaults);
+        }).toThrow('Invalid "defaults" parameter: ""');
         expect(() => {
             assert({}, '1');
-        }).toThrow(invalidDefaults);
+        }).toThrow('Invalid "defaults" parameter: "1"');
     });
 
     it('must throw on unknown properties', () => {
