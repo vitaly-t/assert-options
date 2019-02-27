@@ -33,7 +33,7 @@ const defaults = {
 function functionWithOptions(options) {
     options = assert(options, defaults);
     
-    // safely use options here
+    // options is a safe object here, with all missing defaults set.
 }
 ```
 
@@ -42,6 +42,8 @@ Alternative syntax, when defaults are not needed:
 ```js
 function functionWithOptions(options) {
     options = assert(options, ['first', 'second', 'third']);
+    
+    // options is a safe object here, without defaults.
 }
 ```
 
