@@ -20,7 +20,7 @@
         }
         if (!isArray) {
             for (const d in defaults) {
-                if (!(d in options)) {
+                if (options[d] === undefined) {
                     options[d] = defaults[d];
                 }
             }
