@@ -1,6 +1,6 @@
 {
   "name": "assert-options",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generic options parameter handling",
   "main": "src/index.js",
   "scripts": {

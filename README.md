@@ -48,7 +48,7 @@ function functionWithOptions(options) {
 
 Including `src/index.js` in a browser makes function `assertOptions` available globally.
 
-## API: `assertOptions(options, defaults) => {safe options with defaults}` 
+## API: `assertOptions(options, defaults) => {}` 
 
 * When `options` is `null`/`undefined`, new `{}` is returned, applying `defaults` as specified.
 
