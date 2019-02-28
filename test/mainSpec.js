@@ -27,6 +27,7 @@ describe('positive', () => {
     it('must not set defaults for arrays', () => {
         expect(assert(null, [])).toEqual({});
         expect(assert(null, ['one'])).toEqual({});
+        expect(assert({}, ['one'])).toEqual({});
     });
 
 });

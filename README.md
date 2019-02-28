@@ -1,6 +1,6 @@
 # assert-options
 
-Safe and simple one-line `options` handling:
+Safe and simple `options` handling, with one line of code:
 
 * throw detailed error on any unknown option
 * set default values for all missing options  
@@ -11,7 +11,7 @@ Safe and simple one-line `options` handling:
 ## Rationale
 
 * Passing in invalid or misspelled option names is one of the most common errors.
-* Specifying defaults is the most common operation for methods that take options.  
+* Assigning defaults is the most common operation for methods that take options.  
 
 ## Installation
 

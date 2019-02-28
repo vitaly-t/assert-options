@@ -1,7 +1,7 @@
 {
   "name": "assert-options",
   "version": "0.0.8",
-  "description": "Generic options handling",
+  "description": "Generic options parameter handling",
   "main": "src/index.js",
   "scripts": {
     "test": "jasmine-node test",
@@ -31,7 +31,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=4.5",
+    "node": ">=4.0",
     "npm": ">=2.15"
   },
   "devDependencies": {
