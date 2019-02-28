@@ -13,6 +13,8 @@ Safe and simple `options` handling, with one line of code:
 * Passing in invalid or misspelled option names is one of the most common errors.
 * Assigning defaults is the most common operation for methods that take options.  
 
+This module automates proper options parsing and setting defaults where needed.
+
 ## Installation
 
 ```
@@ -22,7 +24,7 @@ $ npm install assert-options
 ## Usage
 
 ```js
-const assert = require('assert-options');
+const assertOptions = require('assert-options');
 
 const defaults = {
     first: 123,
@@ -31,10 +33,10 @@ const defaults = {
 };
 
 function functionWithOptions(options) {
-    options = assert(options, defaults);
+    options = assertOptions(options, defaults);
     
     // in most cases you will use defaults inline, like this:
-    // options = assert(options, {first: 123, second: null, third: undefined});
+    // options = assertOptions(options, {first: 123, second: null, third: undefined});
     
     // options is a safe object here, with all missing defaults set.
 }
@@ -44,31 +46,30 @@ And when default values are not needed, you can use an array of strings:
 
 ```js
 function functionWithOptions(options) {
-    options = assert(options, ['first', 'second', 'third']);
+    options = assertOptions(options, ['first', 'second', 'third']);
     
-    // the result is exactly the same, as using this:
-    // options = assert(options, {first: undefined, second: undefined, third: undefined});
+    // the result is exactly the same as using this:
+    // options = assertOptions(options, {first: undefined, second: undefined, third: undefined});
     
     // options is a safe object here, without defaults.
 }
 ```
 
-In web browsers, global function `assertOptions` is available.
+Including `src/index.js` in a browser, makes function `assertOptions` available globally.
 
 ## API
 
-* When `options` is `null`/`undefined`, it is assumed to be not used, returning a new `{}` on output,
-with defaults set as specified.
+* When `options` is `null`/`undefined`, new `{}` is returned, with defaults set as specified.
 
 * When `options` contains an unknown property, [TypeError] is thrown: `Option "name" is not supported.`
 
 * When a property in `options` is missing or `undefined`, its value is set from the `defaults`,
-but only when the latter is not `undefined`.
+provided it is available and not `undefined`.
 
-* When `options` is not `null`/`undefined`, it is expected to be of type `object`, or else [TypeError]
-is thrown: `Invalid "options" parameter: value`.
+* When `options` is not `null`/`undefined`, it must be of type `object`, or else [TypeError] is thrown:
+`Invalid "options" parameter: value`.
 
-* Parameter `defaults` must always be passed in, either as a non-null object or an array of strings,
-or else [TypeError] is thrown: `Invalid "defaults" parameter: value`.
+* Parameter `defaults` is required, as a non-`null` object or an array of strings, or else [TypeError]
+is thrown: `Invalid "defaults" parameter: value`.
 
 [TypeError]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
