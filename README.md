@@ -59,7 +59,7 @@ Including `src/index.js` in a browser, makes function `assertOptions` available 
 
 ## API
 
-* When `options` is `null`/`undefined`, new `{}` is returned, with defaults set as specified.
+* When `options` is `null`/`undefined`, new `{}` is returned, applying `defaults` as specified.
 
 * When `options` contains an unknown property, [TypeError] is thrown: `Option "name" is not supported.`
 
