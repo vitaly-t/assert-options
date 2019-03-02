@@ -12,7 +12,7 @@
         if (options) {
             for (const a in options) {
                 if ((isArray && defaults.indexOf(a) === -1) || (!isArray && !(a in defaults))) {
-                    throw new TypeError('Option "' + a + '" is not supported.');
+                    throw new Error('Option "' + a + '" is not supported.');
                 }
             }
         } else {

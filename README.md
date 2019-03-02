@@ -54,7 +54,7 @@ Including `src/index.js` in a browser makes function `assertOptions` available g
 
 * When `options` is `null`/`undefined`, new `{}` is returned, applying `defaults` as specified.
 
-* When `options` contains an unknown property, [TypeError] is thrown: `Option "name" is not supported.`
+* When `options` contains an unknown property, [Error] `Option "name" is not supported.` is thrown.
 
 * When a property in `options` is missing or `undefined`, its value is set from the `defaults`,
 provided it is available and not `undefined`.
@@ -65,4 +65,5 @@ provided it is available and not `undefined`.
 * Parameter `defaults` is required, as a non-`null` object or an array of strings, or else [TypeError]
 is thrown: `Invalid "defaults" parameter: value`.
 
+[Error]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
 [TypeError]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
