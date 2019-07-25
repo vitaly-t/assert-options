@@ -76,8 +76,8 @@ describe('negative', () => {
     });
 
     it('must throw on unknown properties', () => {
-        expect(() => assert({one: 1}, [])).toThrow('Option "one" is not supported.');
-        expect(() => assert({one: 1}, {})).toThrow('Option "one" is not supported.');
-        expect(() => assert({one: 1, two: 2}, ['one'])).toThrow('Option "two" is not supported.');
+        expect(() => assert({one: 1}, [])).toThrow('Option "one" is not recognized.');
+        expect(() => assert({one: 1}, {})).toThrow('Option "one" is not recognized.');
+        expect(() => assert({one: 1, two: 2}, ['one'])).toThrow('Option "two" is not recognized.');
     });
 });
