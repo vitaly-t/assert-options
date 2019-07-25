@@ -54,7 +54,7 @@ Including `src/index.js` in a browser makes function `assertOptions` available g
 
 * When `options` is `null`/`undefined`, new `{}` is returned, applying `defaults` as specified.
 
-* When `options` contains an unknown property, [Error] `Option "name" is not supported.` is thrown.
+* When `options` contains an unknown property, [Error] `Option "name" is not recognized.` is thrown.
 
 * When a property in `options` is missing or `undefined`, its value is set from the `defaults`,
 provided it is available and not `undefined`.
