@@ -48,6 +48,12 @@ function functionWithOptions(options) {
 
 Including `src/index.js` in a browser makes function `assertOptions` available globally.
 
+TypeScript declarations are distributed with the library:
+
+```ts
+import {assertOptions} from 'assert-options';
+```
+
 ## API
 
 ### `assertOptions(options, defaults) => {}` 

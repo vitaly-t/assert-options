@@ -28,6 +28,8 @@
         return options;
     }
 
+    assertOptions.assertOptions = assertOptions; // To make it more TypeScript-friendly
+
     /* istanbul ignore else */
     if (typeof module === 'object' && module && typeof module.exports === 'object') {
         module.exports = assertOptions;
