@@ -1,3 +1,3 @@
-type NamedValues = { [name: string]: any };
+export type NamedValues = { [name: string]: any };
 
-export function assertOptions(options: NamedValues, defaults: NamedValues | string[]);
+export function assertOptions(options: NamedValues, defaults: NamedValues | string[]): NamedValues;
