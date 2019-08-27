@@ -5,6 +5,8 @@ Smart `options` handling, with one line of code:
 * throw detailed error on invalid options
 * set default values for missing options  
 
+Strongly-typed, built for TypeScript 3.x `strict` mode.
+
 [![Build Status](https://travis-ci.org/vitaly-t/assert-options.svg?branch=master)](https://travis-ci.org/vitaly-t/assert-options)
 [![Coverage Status](https://coveralls.io/repos/vitaly-t/assert-options/badge.svg?branch=master)](https://coveralls.io/r/vitaly-t/assert-options?branch=master)
 
@@ -23,8 +25,8 @@ $ npm install assert-options
 
 ## Usage
 
-```js
-const assertOptions = require('assert-options');
+```ts
+import {assertOptions} from 'assert-options';
 
 function functionWithOptions(options) {
     options = assertOptions(options, {first: 123, second: null});
@@ -44,14 +46,6 @@ function functionWithOptions(options) {
     
     // options is a safe object here, without defaults.
 }
-```
-
-Including `src/index.js` in a browser makes function `assertOptions` available globally.
-
-TypeScript declarations use `strict` mode, and are distributed with the library:
-
-```ts
-import {assertOptions} from 'assert-options';
 ```
 
 ## API
