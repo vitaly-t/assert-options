@@ -1,7 +1,7 @@
 {
   "name": "assert-options",
   "version": "0.6.0",
-  "description": "Generic options parameter handling",
+  "description": "Generic options parameter handling.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
@@ -40,7 +40,6 @@
     "@types/chai": "4.2.0",
     "@types/mocha": "5.2.7",
     "@types/node": "12.7.2",
-    "browserify": "16.5.0",
     "chai": "4.2.0",
     "coveralls": "3.0.6",
     "mocha": "6.2.0",
