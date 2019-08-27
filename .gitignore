@@ -1,5 +1,9 @@
 .idea/
-coverage/
+.nyc_output/
 node_modules/
+coverage/
 package-lock.json
-test/typescript/*.js
+dist/
+docs/
+**/*.js
+**/*.d.ts
