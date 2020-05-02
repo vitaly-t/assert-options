@@ -5,7 +5,7 @@ Smart `options` handling, with one line of code:
 * throw detailed error on invalid options
 * set default values for missing options  
 
-Strongly-typed, built for TypeScript 3.x `strict` mode.
+Strongly-typed, built with TypeScript 3.x `strict` mode, for JavaScript clients.
 
 [![Build Status](https://travis-ci.org/vitaly-t/assert-options.svg?branch=master)](https://travis-ci.org/vitaly-t/assert-options)
 [![Coverage Status](https://coveralls.io/repos/vitaly-t/assert-options/badge.svg?branch=master)](https://coveralls.io/r/vitaly-t/assert-options?branch=master)
@@ -17,6 +17,9 @@ Strongly-typed, built for TypeScript 3.x `strict` mode.
 
 This module automates proper options parsing and setting defaults where needed.
 
+Although this library is implemented in TypeScript, its objective is to help JavaScript clients,
+because TypeScript itself can handle invalid options and defaults natively. 
+
 ## Installation
 
 ```
@@ -25,8 +28,8 @@ $ npm install assert-options
 
 ## Usage
 
-```ts
-import {assertOptions} from 'assert-options';
+```js
+const { assertOptions } = require('assert-options');
 
 function functionWithOptions(options) {
     options = assertOptions(options, {first: 123, second: null});
@@ -35,7 +38,7 @@ function functionWithOptions(options) {
 }
 ```
 
-And when default values are not needed, you can use an array of strings:
+And when default values are not needed, you can just use an array of strings:
 
 ```js
 function functionWithOptions(options) {
@@ -57,7 +60,7 @@ function functionWithOptions(options) {
 * When `options` contains an unknown property, [Error] `Option "name" is not recognized.` is thrown.
 
 * When a property in `options` is missing or `undefined`, its value is set from the `defaults`,
-provided it is available and not `undefined`.
+provided it is available and its value is not `undefined`.
 
 * When `options` is not `null`/`undefined`, it must be of type `object`, or else [TypeError] is thrown:
 `Invalid "options" parameter: value`.
