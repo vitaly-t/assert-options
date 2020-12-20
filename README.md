@@ -5,25 +5,25 @@ Smart `options` handling, with one line of code:
 * throw detailed error on invalid options
 * set default values for missing options  
 
-Strongly-typed, built with TypeScript 3.x `strict` mode, for JavaScript clients.
+Strongly-typed, built with TypeScript 4.x `strict` mode, for JavaScript clients.
 
 [![Build Status](https://travis-ci.org/vitaly-t/assert-options.svg?branch=master)](https://travis-ci.org/vitaly-t/assert-options)
 [![Coverage Status](https://coveralls.io/repos/vitaly-t/assert-options/badge.svg?branch=master)](https://coveralls.io/r/vitaly-t/assert-options?branch=master)
 
 ## Rationale
 
-* Passing in invalid or misspelled option names is one of the most common errors.
+* Passing in invalid or misspelled option names is one of the most common errors in JavaScript.
 * Assigning defaults is the most common operation for methods that take options.  
 
-This module automates proper options parsing and setting defaults where needed.
+This module automates proper options handling - parsing and setting defaults where needed.
 
-Although this library is implemented in TypeScript, its objective is to help JavaScript clients,
+Although this library is implemented in TypeScript, its objective is mainly to help JavaScript clients,
 because TypeScript itself can handle invalid options and defaults natively. 
 
 ## Installation
 
 ```
-$ npm install assert-options
+$ npm i assert-options
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ function functionWithOptions(options) {
 }
 ```
 
-And when default values are not needed, you can just use an array of strings:
+When default values are not needed, you can just use an array of strings:
 
 ```js
 function functionWithOptions(options) {
