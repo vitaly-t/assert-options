@@ -1,6 +1,6 @@
 # assert-options
 
-Smart `options` handling, with one line of code:
+Smart `options`-object handling, with one line of code:
 
 * throw detailed error on invalid options
 * set default values for missing options  
@@ -12,7 +12,7 @@ Strongly-typed, built with TypeScript 4.x `strict` mode, for JavaScript clients.
 * Passing in invalid or misspelled option names is one of the most common errors in JavaScript.
 * Assigning defaults is the most common operation for methods that take options.  
 
-This module automates proper options handling - parsing and setting defaults where needed.
+This module automates proper options handling - parsing + setting defaults in one line.
 
 Although this library is implemented in TypeScript, its objective is mainly to help JavaScript clients,
 because TypeScript itself can handle invalid options and defaults natively. 
@@ -63,6 +63,9 @@ class MyErrorHanler {
 }
 
 const assert = createAssert(new MyErrorHanler());
+
+// note that the default assertOptions is created like this:
+// const assertOptions = createAssert(new DefaultErrorHandler());
 ```
 
 ## API
