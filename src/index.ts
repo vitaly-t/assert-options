@@ -1,6 +1,6 @@
-import {assertType, DefaultErrorHandler, IOptionsErrorHandler, NamedValues, OptionsError} from './handler';
+import {assertFunc, DefaultErrorHandler, IOptionsErrorHandler, NamedValues, OptionsError} from './handler';
 
-export function configAssert(errHandler: IOptionsErrorHandler): assertType {
+export function configAssert(errHandler: IOptionsErrorHandler): assertFunc {
 
     return function (options: NamedValues | null | undefined, defaults: NamedValues | string[]): NamedValues {
         if (options !== null && options !== undefined && typeof options !== 'object') {
@@ -31,4 +31,4 @@ export function configAssert(errHandler: IOptionsErrorHandler): assertType {
     };
 }
 
-export const assertOptions: assertType = configAssert(new DefaultErrorHandler());
+export const assertOptions: assertFunc = configAssert(new DefaultErrorHandler());

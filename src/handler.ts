@@ -10,7 +10,7 @@ export interface IErrorContext {
     key?: string;
 }
 
-export type assertType = (options: NamedValues | null | undefined, defaults: NamedValues | string[]) => NamedValues;
+export type assertFunc = (options: NamedValues | null | undefined, defaults: NamedValues | string[]) => NamedValues;
 
 export type NamedValues = { [name: string]: any };
 
