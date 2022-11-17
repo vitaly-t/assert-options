@@ -63,9 +63,6 @@ class MyErrorHanler {
 }
 
 const assert = createAssert(new MyErrorHanler());
-
-// note that the default assertOptions is created like this:
-// const assertOptions = createAssert(new DefaultErrorHandler());
 ```
 
 ## API
