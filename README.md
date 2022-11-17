@@ -70,7 +70,7 @@ const assert = createAssert(new MyErrorHanler());
 
 ## API
 
-### `assertOptions(options, defaults) => {}` 
+### `assertOptions(options, defaults)` 
 
 * When `options` is `null`/`undefined`, new `{}` is returned, applying `defaults` as specified.
 
@@ -84,6 +84,18 @@ provided it is available and its value is not `undefined`.
   
 * Parameter `defaults` is required, as a non-`null` object or an array of strings, or else [TypeError]
 is thrown: `Invalid "defaults" parameter: value`.
+
+### `createAssert(handler)`
+
+Creates a new assert function, using a custom error handler that implements `IOptionsErrorHandler` protocol.
+
+For example, the default `assertOptions` is created internally like this:
+
+```js
+const {createOptions, DefaultErrorHandler} = require('assert-options');
+
+const assertOptions = createAssert(new DefaultErrorHandler());
+``` 
 
 [Error]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
 [TypeError]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
