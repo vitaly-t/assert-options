@@ -7,9 +7,6 @@ Smart `options` handling, with one line of code:
 
 Strongly-typed, built with TypeScript 4.x `strict` mode, for JavaScript clients.
 
-[![Build Status](https://travis-ci.org/vitaly-t/assert-options.svg?branch=master)](https://travis-ci.org/vitaly-t/assert-options)
-[![Coverage Status](https://coveralls.io/repos/vitaly-t/assert-options/badge.svg?branch=master)](https://coveralls.io/r/vitaly-t/assert-options?branch=master)
-
 ## Rationale
 
 * Passing in invalid or misspelled option names is one of the most common errors in JavaScript.
@@ -51,6 +48,23 @@ function functionWithOptions(options) {
 }
 ```
 
+You can override how errors are thrown, by creating the `assert` function yourself,
+and specifying a custom handler:
+
+```js
+const {createAssert} = require('assert-options');
+
+// must implement IOptionsErrorHandler protocol
+class MyErrorHanler {
+    handle(err, ctx) {
+        // throw different errors, based on "err"
+        // for reference, see DefaultErrorHandler implementation 
+    }
+}
+
+const assert = createAssert(new MyErrorHanler());
+```
+
 ## API
 
 ### `assertOptions(options, defaults) => {}` 
@@ -64,7 +78,7 @@ provided it is available and its value is not `undefined`.
 
 * When `options` is not `null`/`undefined`, it must be of type `object`, or else [TypeError] is thrown:
 `Invalid "options" parameter: value`.
-
+  
 * Parameter `defaults` is required, as a non-`null` object or an array of strings, or else [TypeError]
 is thrown: `Invalid "defaults" parameter: value`.
 
