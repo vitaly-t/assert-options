@@ -37,21 +37,21 @@ describe('negative', () => {
         let err;
         try {
             assert(undefined, <string[]><unknown>null);
-        } catch (e) {
+        } catch (e: any) {
             err = e;
         }
         expect(err.constructor.name).to.eq('TypeError');
 
         try {
             assert(<undefined><unknown>123, <string[]><unknown>null);
-        } catch (e) {
+        } catch (e: any) {
             err = e;
         }
         expect(err.constructor.name).to.eq('TypeError');
 
         try {
             assert({one: 1}, []);
-        } catch (e) {
+        } catch (e: any) {
             err = e;
         }
         expect(err.constructor.name).to.eq('Error');
