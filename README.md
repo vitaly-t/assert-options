@@ -8,7 +8,7 @@ Smart `options`-object handling, with one line of code:
 * throw detailed error on invalid options
 * set default values for missing options  
 
-Strongly-typed, built with TypeScript 4.x `strict` mode, for JavaScript clients.
+Strongly-typed, built with TypeScript 5.x `strict` mode, for JavaScript clients.
 
 ## Rationale
 
