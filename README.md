@@ -1,4 +1,7 @@
-# assert-options
+assert-options
+--------------
+
+[![Build Status](https://github.com/vitaly-t/assert-options/actions/workflows/ci.yml/badge.svg)](https://github.com/vitaly-t/assert-options/actions/workflows/ci.yml)
 
 Smart `options`-object handling, with one line of code:
 
