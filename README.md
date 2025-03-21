@@ -2,6 +2,7 @@ assert-options
 --------------
 
 [![Build Status](https://github.com/vitaly-t/assert-options/actions/workflows/ci.yml/badge.svg)](https://github.com/vitaly-t/assert-options/actions/workflows/ci.yml)
+[![Node Version](https://img.shields.io/badge/nodejs-18%20--%2022-green.svg?logo=node.js&style=flat)](https://nodejs.org)
 
 Smart `options`-object handling, with one line of code:
 
